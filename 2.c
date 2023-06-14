@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void sortArr(int *in);
+void sortArr(int (* in)[6]);
 
 int main()
 {
@@ -24,7 +24,6 @@ int main()
             {
                 if (getLotto[i][k] == temp)
                 {
-                    printf("%d번째 %d번 %d가 중복 : 값은 %d\n", i + 1, j + 1, k + 1, temp);
                     temp = rand() % 44 + 1;
                     k = 0;
                     continue;
@@ -33,9 +32,7 @@ int main()
             getLotto[i][j] = temp;
         }
     }
-    int *pt = getLotto[6];
-    sortArr(pt);
-
+    sortArr(&getLotto);
     for (int i = 0; i < 10; i++)
     {
         printf("%2d번째 복권번호는 : ", i + 1);
@@ -47,13 +44,12 @@ int main()
     }
 }
 
-void sortArr((int *)*in)
+void sortArr(int(*in)[6])
 {
-    printf("%d", *(*(in + 0) + 0));
     int temp = 0;
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < 10; i++)
     {
-        for (int a = 4; a > 0; a--)
+        for (int a = 5; a > 0; a--)
         {
             for (int j = 0; j < a; j++)
             {
