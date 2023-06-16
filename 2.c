@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void sortArr(int (* in)[6]);
+void sortArr(int (*in)[6]);
 
 int main()
 {
@@ -32,7 +32,7 @@ int main()
             getLotto[i][j] = temp;
         }
     }
-    sortArr(&getLotto);
+    sortArr(getLotto);
     for (int i = 0; i < 10; i++)
     {
         printf("%2d번째 복권번호는 : ", i + 1);
@@ -44,7 +44,7 @@ int main()
     }
 }
 
-void sortArr(int(*in)[6])
+void sortArr(int (*in)[6])
 {
     int temp = 0;
     for (int i = 0; i < 10; i++)

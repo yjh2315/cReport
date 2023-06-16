@@ -30,6 +30,7 @@ int main()
     arrC = mulArr(arrA, a_X, a_Y, arrB, b_X, b_Y);
     printf("\n계산 결과 행렬:\n");
     printArr(arrC, c_X, c_Y);
+    // 생성된 배열들로 결과 행렬을 출력합니다.
 
     for (int i = 0; i < a_X; i++)
     {
@@ -50,6 +51,7 @@ int main()
 }
 
 int **makeArr(int **in, int x_range, int y_range)
+// x, y값만큼 동적할당하고, 입력받은 후 그 주소를 넘겨줍니다.
 {
     int **tempArr = (int **)malloc(sizeof(int *) * x_range);
     for (int temp = 0; temp < x_range; temp++)
@@ -71,6 +73,7 @@ int **makeArr(int **in, int x_range, int y_range)
     return tempArr;
 }
 
+// 결과값 배열을 동적할당하여 생성하고, 그 값들을 각각 연산한 후 리턴합니다.
 int **mulArr(int **in1, int size1_x, int size1_y, int **in2, int size2_x, int size2_y)
 {
     int **tempArr = (int **)malloc(sizeof(int *) * size2_x);
@@ -95,6 +98,7 @@ int **mulArr(int **in1, int size1_x, int size1_y, int **in2, int size2_x, int si
     return tempArr;
 }
 
+// arr을 출력합니다.
 void printArr(int **in, int x, int y)
 {
     for (int j = 0; j < y; j++)

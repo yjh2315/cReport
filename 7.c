@@ -56,6 +56,7 @@ int main()
 
     int i = 0;
 
+    // 종료하려면 Ctrl + C
     while (1)
     {
         printScreen(ptScreen);
@@ -64,6 +65,7 @@ int main()
         Sleep(1000);
         i++;
         // system("cls");
+        // windows 환경에서 해당 코드와 #include<windows.h> 사용시 화면 출력사항 다 지워줌.
 
         for (int i = 0; i < 26; i++)
         {
